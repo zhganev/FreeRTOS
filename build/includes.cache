@@ -1,0 +1,17 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/Users/georgi/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/Users/georgi/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/variants/standard"
+  },
+  {
+    "Sourcefile": "/Users/georgi/GitHub/FreeRTOS/build/sketch/FreeRTOS.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]
