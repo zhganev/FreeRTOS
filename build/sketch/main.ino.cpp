@@ -1,3 +1,5 @@
+#include <Arduino.h>
+#line 1 "/Users/georgi/GitHub/FreeRTOS/main.ino"
 /*
  * Example of a basic FreeRTOS queue
  * https://www.freertos.org/Embedded-RTOS-Queues.html
@@ -15,6 +17,17 @@
  */
 QueueHandle_t integerQueue;
 
+#line 18 "/Users/georgi/GitHub/FreeRTOS/main.ino"
+void setup();
+#line 59 "/Users/georgi/GitHub/FreeRTOS/main.ino"
+void loop();
+#line 67 "/Users/georgi/GitHub/FreeRTOS/main.ino"
+void TaskAnalogRead(void *pvParameters);
+#line 91 "/Users/georgi/GitHub/FreeRTOS/main.ino"
+void TaskSerial(void * pvParameters);
+#line 121 "/Users/georgi/GitHub/FreeRTOS/main.ino"
+void TaskBlink(void *pvParameters);
+#line 18 "/Users/georgi/GitHub/FreeRTOS/main.ino"
 void setup() {
 
   /**
