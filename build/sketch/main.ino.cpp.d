@@ -20,5 +20,4 @@
  /Users/georgi/Documents/Arduino/libraries/Arduino_FreeRTOS_Library-master/src/FreeRTOSVariant.h \
  /Users/georgi/Documents/Arduino/libraries/Arduino_FreeRTOS_Library-master/src/Arduino_FreeRTOS.h \
  /Users/georgi/Documents/Arduino/libraries/Arduino_FreeRTOS_Library-master/src/task.h \
- /Users/georgi/Documents/Arduino/libraries/Arduino_FreeRTOS_Library-master/src/list.h \
- /Users/georgi/Documents/Arduino/libraries/Arduino_FreeRTOS_Library-master/src/queue.h
+ /Users/georgi/Documents/Arduino/libraries/Arduino_FreeRTOS_Library-master/src/list.h
