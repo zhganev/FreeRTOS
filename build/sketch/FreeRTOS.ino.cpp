@@ -5,6 +5,17 @@
 static void task1_handler(void* parameters);
 static void task2_handler(void* parameters);
 
+#line 6 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+void setup();
+#line 38 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+void loop();
+#line 54 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+static void led_green_handler(void* parameters);
+#line 67 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+static void led_red_handler(void* parameters);
+#line 80 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+static void led_yellow_handler(void* parameters);
+#line 6 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
 void setup() {
 
   TaskHandle_t task1_handle;
@@ -54,28 +65,40 @@ static void task2_handler(void* parameters){
 }
 
 static void led_green_handler(void* parameters){
+
+  TickType_t last_wakeup_time;
+  last_wakeup_time = xTaskGetTickCount();
+
   while(1){
     digitalWrite(2, HIGH);
-    delay(1000);
+    vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(1000));
     digitalWrite(2, LOW);
-    delay(1000);
+    vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(1000));
   }
 }
 
 static void led_red_handler(void* parameters){
+
+  TickType_t last_wakeup_time;
+  last_wakeup_time = xTaskGetTickCount();
+
   while(1){
     digitalWrite(3, HIGH);
-    delay(800);
+    vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(800));
     digitalWrite(3, LOW);
-    delay(800);
+    vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(800));
   }
 }
 
 static void led_yellow_handler(void* parameters){
+
+  TickType_t last_wakeup_time;
+  last_wakeup_time = xTaskGetTickCount();
+
   while(1){
     digitalWrite(7, HIGH);
-    delay(400);
+    vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(400));
     digitalWrite(7, LOW);
-    delay(400);
+    vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(400));
   }
 }

@@ -1,0 +1,67 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/Users/georgi/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/cores/arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "/Users/georgi/Library/Arduino15/packages/arduino/hardware/avr/1.8.6/variants/standard"
+  },
+  {
+    "Sourcefile": "/Users/georgi/GitHub/FreeRTOS/build/sketch/FreeRTOS.ino.cpp",
+    "Include": "Arduino_FreeRTOS.h",
+    "Includepath": "/Users/georgi/Documents/Arduino/libraries/FreeRTOS/src"
+  },
+  {
+    "Sourcefile": "/Users/georgi/GitHub/FreeRTOS/build/sketch/FreeRTOS.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/event_groups.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/heap_3.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/list.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/port.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/queue.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/stream_buffer.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/tasks.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/timers.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "/Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/variantHooks.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]
