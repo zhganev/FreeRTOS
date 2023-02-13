@@ -1,5 +1,5 @@
 {
-    "sketch": "main.ino",
+    "sketch": "FreeRTOS.ino",
     "board": "arduino:avr:uno",
     "port": "COM4",
     "output": "build"
