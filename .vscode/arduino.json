@@ -1,6 +1,6 @@
 {
     "sketch": "main.ino",
     "board": "arduino:avr:uno",
-    "port": "/dev/tty.usbmodem14101",
+    "port": "COM4",
     "output": "build"
 }
