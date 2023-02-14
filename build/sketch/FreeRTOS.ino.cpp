@@ -1,21 +1,21 @@
 #include <Arduino.h>
-#line 1 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+#line 1 "C:\\Users\\gzhganev\\.github\\FreeRTOS\\FreeRTOS.ino"
 #include <Arduino_FreeRTOS.h>
 
 static void task1_handler(void* parameters);
 static void task2_handler(void* parameters);
 
-#line 6 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+#line 6 "C:\\Users\\gzhganev\\.github\\FreeRTOS\\FreeRTOS.ino"
 void setup();
-#line 38 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+#line 38 "C:\\Users\\gzhganev\\.github\\FreeRTOS\\FreeRTOS.ino"
 void loop();
-#line 54 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+#line 54 "C:\\Users\\gzhganev\\.github\\FreeRTOS\\FreeRTOS.ino"
 static void led_green_handler(void* parameters);
-#line 67 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+#line 67 "C:\\Users\\gzhganev\\.github\\FreeRTOS\\FreeRTOS.ino"
 static void led_red_handler(void* parameters);
-#line 80 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+#line 80 "C:\\Users\\gzhganev\\.github\\FreeRTOS\\FreeRTOS.ino"
 static void led_yellow_handler(void* parameters);
-#line 6 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+#line 6 "C:\\Users\\gzhganev\\.github\\FreeRTOS\\FreeRTOS.ino"
 void setup() {
 
   TaskHandle_t task1_handle;
@@ -23,7 +23,7 @@ void setup() {
   TaskHandle_t task3_handle;
   BaseType_t status;
   pinMode(2, OUTPUT);
-  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
   pinMode(7, OUTPUT);
 /*
   Serial.begin(9600);
@@ -83,9 +83,9 @@ static void led_red_handler(void* parameters){
   last_wakeup_time = xTaskGetTickCount();
 
   while(1){
-    digitalWrite(3, HIGH);
+    digitalWrite(4, HIGH);
     vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(800));
-    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
     vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(800));
   }
 }

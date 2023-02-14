@@ -1,11 +1,11 @@
-/Users/georgi/GitHub/FreeRTOS/build/libraries/FreeRTOS/list.c.o: \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/list.c \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/Arduino_FreeRTOS.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/FreeRTOSConfig.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/projdefs.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/portable.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/portmacro.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/mpu_wrappers.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/FreeRTOSVariant.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/task.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/list.h
+C:\Users\gzhganev\.github\FreeRTOS\build\libraries\FreeRTOS\list.c.o: \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\list.c \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\Arduino_FreeRTOS.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\FreeRTOSConfig.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\projdefs.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\portable.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\portmacro.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\mpu_wrappers.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\FreeRTOSVariant.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\task.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\list.h

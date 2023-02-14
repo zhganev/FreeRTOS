@@ -1,13 +1,13 @@
-/Users/georgi/GitHub/FreeRTOS/build/libraries/FreeRTOS/event_groups.c.o: \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/event_groups.c \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/Arduino_FreeRTOS.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/FreeRTOSConfig.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/projdefs.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/portable.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/portmacro.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/mpu_wrappers.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/FreeRTOSVariant.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/task.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/list.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/timers.h \
- /Users/georgi/Documents/Arduino/libraries/FreeRTOS/src/event_groups.h
+C:\Users\gzhganev\.github\FreeRTOS\build\libraries\FreeRTOS\event_groups.c.o: \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\event_groups.c \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\Arduino_FreeRTOS.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\FreeRTOSConfig.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\projdefs.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\portable.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\portmacro.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\mpu_wrappers.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\FreeRTOSVariant.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\task.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\list.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\timers.h \
+ C:\Users\gzhganev\OneDrive\ -\ Visteon\Documents\Arduino\libraries\FreeRTOS\src\event_groups.h
