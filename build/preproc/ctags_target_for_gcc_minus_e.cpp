@@ -90,19 +90,39 @@ static void led_green_handler(void* parameters){
   TickType_t last_wakeup_time;
   last_wakeup_time = xTaskGetTickCount();
 
+  BaseType_t status;
+
   while(1){
     digitalWrite(2, 0x1);
-    do { ( void ) xTaskDelayUntil( ( &last_wakeup_time ), ( ( ( TickType_t ) ( ( ( uint32_t ) ( 1000 ) * ( TickType_t ) ( (TickType_t)( (uint32_t)128000 >> (
-# 74 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3
-   0 
-# 74 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
-   /* portUSE_WDTO to use the Watchdog Timer for xTaskIncrementTick*/ + 11) ) ) /* 2^11 = 2048 WDT scaler for 128kHz Timer*/ ) / ( TickType_t ) 1000U ) ) ) ); } while( 0 );
-    digitalWrite(2, 0x0);
     do { ( void ) xTaskDelayUntil( ( &last_wakeup_time ), ( ( ( TickType_t ) ( ( ( uint32_t ) ( 1000 ) * ( TickType_t ) ( (TickType_t)( (uint32_t)128000 >> (
 # 76 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3
    0 
 # 76 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
    /* portUSE_WDTO to use the Watchdog Timer for xTaskIncrementTick*/ + 11) ) ) /* 2^11 = 2048 WDT scaler for 128kHz Timer*/ ) / ( TickType_t ) 1000U ) ) ) ); } while( 0 );
+    digitalWrite(2, 0x0);
+    do { ( void ) xTaskDelayUntil( ( &last_wakeup_time ), ( ( ( TickType_t ) ( ( ( uint32_t ) ( 1000 ) * ( TickType_t ) ( (TickType_t)( (uint32_t)128000 >> (
+# 78 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3
+   0 
+# 78 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+   /* portUSE_WDTO to use the Watchdog Timer for xTaskIncrementTick*/ + 11) ) ) /* 2^11 = 2048 WDT scaler for 128kHz Timer*/ ) / ( TickType_t ) 1000U ) ) ) ); } while( 0 );
+    status=xTaskGenericNotifyWait( ( 0 ), ( 0 ), ( 0 ), ( 
+# 79 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3 4
+          __null 
+# 79 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+          ), ( ( ( TickType_t ) ( ( ( uint32_t ) ( 1000 ) * ( TickType_t ) ( (TickType_t)( (uint32_t)128000 >> (
+# 79 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3
+          0 
+# 79 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+          /* portUSE_WDTO to use the Watchdog Timer for xTaskIncrementTick*/ + 11) ) ) /* 2^11 = 2048 WDT scaler for 128kHz Timer*/ ) / ( TickType_t ) 1000U ) ) ) );
+    if(status=( ( BaseType_t ) 1 )){
+      next_task_handle = ledy_handle;
+      digitalWrite(2, 0x1);
+      vTaskDelete(
+# 83 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3 4
+                 __null
+# 83 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+                     );
+    }
   }
 }
 
@@ -114,15 +134,15 @@ static void led_red_handler(void* parameters){
   while(1){
     digitalWrite(4, 0x1);
     do { ( void ) xTaskDelayUntil( ( &last_wakeup_time ), ( ( ( TickType_t ) ( ( ( uint32_t ) ( 800 ) * ( TickType_t ) ( (TickType_t)( (uint32_t)128000 >> (
-# 87 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3
+# 95 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3
    0 
-# 87 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+# 95 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
    /* portUSE_WDTO to use the Watchdog Timer for xTaskIncrementTick*/ + 11) ) ) /* 2^11 = 2048 WDT scaler for 128kHz Timer*/ ) / ( TickType_t ) 1000U ) ) ) ); } while( 0 );
     digitalWrite(4, 0x0);
     do { ( void ) xTaskDelayUntil( ( &last_wakeup_time ), ( ( ( TickType_t ) ( ( ( uint32_t ) ( 800 ) * ( TickType_t ) ( (TickType_t)( (uint32_t)128000 >> (
-# 89 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3
+# 97 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3
    0 
-# 89 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+# 97 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
    /* portUSE_WDTO to use the Watchdog Timer for xTaskIncrementTick*/ + 11) ) ) /* 2^11 = 2048 WDT scaler for 128kHz Timer*/ ) / ( TickType_t ) 1000U ) ) ) ); } while( 0 );
   }
 }
@@ -132,21 +152,41 @@ static void led_yellow_handler(void* parameters){
   TickType_t last_wakeup_time;
   last_wakeup_time = xTaskGetTickCount();
 
+  BaseType_t status;
   while(1){
     digitalWrite(7, 0x1);
     do { ( void ) xTaskDelayUntil( ( &last_wakeup_time ), ( ( ( TickType_t ) ( ( ( uint32_t ) ( 400 ) * ( TickType_t ) ( (TickType_t)( (uint32_t)128000 >> (
-# 100 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3
+# 109 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3
    0 
-# 100 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+# 109 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
    /* portUSE_WDTO to use the Watchdog Timer for xTaskIncrementTick*/ + 11) ) ) /* 2^11 = 2048 WDT scaler for 128kHz Timer*/ ) / ( TickType_t ) 1000U ) ) ) ); } while( 0 );
     digitalWrite(7, 0x0);
     do { ( void ) xTaskDelayUntil( ( &last_wakeup_time ), ( ( ( TickType_t ) ( ( ( uint32_t ) ( 400 ) * ( TickType_t ) ( (TickType_t)( (uint32_t)128000 >> (
-# 102 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3
+# 111 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3
    0 
-# 102 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+# 111 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
    /* portUSE_WDTO to use the Watchdog Timer for xTaskIncrementTick*/ + 11) ) ) /* 2^11 = 2048 WDT scaler for 128kHz Timer*/ ) / ( TickType_t ) 1000U ) ) ) ); } while( 0 );
+    status=xTaskGenericNotifyWait( ( 0 ), ( 0 ), ( 0 ), ( 
+# 112 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3 4
+          __null 
+# 112 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+          ), ( ( ( TickType_t ) ( ( ( uint32_t ) ( 1000 ) * ( TickType_t ) ( (TickType_t)( (uint32_t)128000 >> (
+# 112 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3
+          0 
+# 112 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+          /* portUSE_WDTO to use the Watchdog Timer for xTaskIncrementTick*/ + 11) ) ) /* 2^11 = 2048 WDT scaler for 128kHz Timer*/ ) / ( TickType_t ) 1000U ) ) ) );
+    if(status=( ( BaseType_t ) 1 )){
+      next_task_handle = ledr_handle;
+      digitalWrite(7, 0x1);
+      vTaskDelete(
+# 116 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3 4
+                 __null
+# 116 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+                     );
+    }
+   }
   }
-}
+
 
 static void button_handler(void* parameters){
 
@@ -159,17 +199,17 @@ static void button_handler(void* parameters){
     if(btn_read){
       if(! prev_read){
         xTaskGenericNotify( ( next_task_handle ), ( ( 0 ) ), ( 0 ), ( eNoAction ), 
-# 116 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3 4
+# 132 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3 4
        __null 
-# 116 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+# 132 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
        );
       }
     }
     prev_read = btn_read;
     vTaskDelay(( ( TickType_t ) ( ( ( uint32_t ) ( 10 ) * ( TickType_t ) ( (TickType_t)( (uint32_t)128000 >> (
-# 120 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3
+# 136 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino" 3
               0 
-# 120 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
+# 136 "/Users/georgi/GitHub/FreeRTOS/FreeRTOS.ino"
               /* portUSE_WDTO to use the Watchdog Timer for xTaskIncrementTick*/ + 11) ) ) /* 2^11 = 2048 WDT scaler for 128kHz Timer*/ ) / ( TickType_t ) 1000U ) ));
   }
 }
