@@ -1,14 +1,23 @@
 #include <Arduino_FreeRTOS.h>
 
-static void task1_handler(void* parameters);
-static void task2_handler(void* parameters);
+//static void task1_handler(void* parameters);
+//static void task2_handler(void* parameters);
+static void led_green_handler(void* parameters);
+static void led_red_handler(void* parameters);
+static void led_yellow_handler(void* parameters);
+static void button_handler(void* parameters);
 
 void setup() {
 
-  TaskHandle_t task1_handle;
-  TaskHandle_t task2_handle;
-  TaskHandle_t task3_handle;
+  //TaskHandle_t task1_handle;
+  //TaskHandle_t task2_handle;
+  TaskHandle_t ledg_handle;
+  TaskHandle_t ledr_handle;
+  TaskHandle_t ledy_handle;
+  TaskHandle_t btn_handle;
+  TaskHandle_t volatile next_task_handle = NULL;
   BaseType_t status;
+
   pinMode(2, OUTPUT);
   pinMode(4, OUTPUT);
   pinMode(7, OUTPUT);
@@ -21,11 +30,14 @@ void setup() {
   configASSERT(status == pdPASS);
   */
 
-  status=xTaskCreate(led_green_handler, "LED_green_task", 200, NULL, 2, &task1_handle);
+  status=xTaskCreate(led_green_handler, "LED_green_task", 200, NULL, 1, &ledg_handle);
   configASSERT(status=pdPASS);
-  status=xTaskCreate(led_red_handler, "LED_red_task", 200, NULL, 2, &task2_handle);
+  next_task_handle = ledg_handle;
+  status=xTaskCreate(led_red_handler, "LED_red_task", 200, NULL, 3, &ledr_handle);
   configASSERT(status=pdPASS);
-  status=xTaskCreate(led_yellow_handler, "LED_yellow_task", 200, NULL, 2, &task3_handle);
+  status=xTaskCreate(led_yellow_handler, "LED_yellow_task", 200, NULL, 2, &ledy_handle);
+  configASSERT(status=pdPASS);
+  status=xTaskCreate(button_handler, "Button_task", 200, NULL, 4, &btn_handle);
   configASSERT(status=pdPASS);
 
   /*Start the FreeRTOS Scheduler*/
@@ -88,4 +100,12 @@ static void led_yellow_handler(void* parameters){
     digitalWrite(7, LOW);
     vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(400));
   }
+}
+
+static void button_handler(void* parameters){
+
+  while(1){
+    
+  }
+
 }
