@@ -21,6 +21,7 @@ void setup() {
   pinMode(2, OUTPUT);
   pinMode(4, OUTPUT);
   pinMode(7, OUTPUT);
+  pinMode(8, INPUT);
 /*
   Serial.begin(9600);
 
@@ -104,8 +105,18 @@ static void led_yellow_handler(void* parameters){
 
 static void button_handler(void* parameters){
 
-  while(1){
-    
-  }
+  uint8_t btn_read=0;
+  uint8_t prev_read=0;
 
+  while(1){
+    btn_read = digitalRead(8);
+
+    if(btn_read){
+      if(! prev_read){
+        xTaskNotify(next_task_handle,0,eNoAction);
+      }
+    }
+    prev_read = btn_read;
+    vTaskDelay(pdMS_TO_TICKS(10));
+  }
 }

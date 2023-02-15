@@ -1,7 +1,0 @@
-#line 1 "C:\\Users\\gzhganev\\.github\\FreeRTOS\\.vscode\\arduino.json"
-{
-    "sketch": "FreeRTOS.ino",
-    "board": "arduino:avr:uno",
-    "port": "COM4",
-    "output": "build"
-}
