@@ -90,12 +90,21 @@ static void led_red_handler(void* parameters){
   TickType_t last_wakeup_time;
   last_wakeup_time = xTaskGetTickCount();
 
+  BaseType_t status;
+
   while(1){
     digitalWrite(4, HIGH);
     vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(800));
     digitalWrite(4, LOW);
     vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(800));
-  }
+    status=xTaskNotifyWait(0, 0, NULL, pdMS_TO_TICKS(800));
+    if(status=pdTRUE){
+      next_task_handle = NULL;
+      digitalWrite(4, HIGH);
+      vTaskDelete(NULL);
+      vTaskDelete(btn_handle);
+    }
+  } 
 }
 
 static void led_yellow_handler(void* parameters){
@@ -109,7 +118,7 @@ static void led_yellow_handler(void* parameters){
     vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(400));
     digitalWrite(7, LOW);
     vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(400));
-    status=xTaskNotifyWait(0, 0, NULL, pdMS_TO_TICKS(1000));
+    status=xTaskNotifyWait(0, 0, NULL, pdMS_TO_TICKS(400));
     if(status=pdTRUE){
       next_task_handle = ledr_handle;
       digitalWrite(7, HIGH);
