@@ -6,16 +6,16 @@ static void led_green_handler(void* parameters);
 static void led_red_handler(void* parameters);
 static void led_yellow_handler(void* parameters);
 static void button_handler(void* parameters);
+TaskHandle_t volatile next_task_handle = NULL;
+//TaskHandle_t task1_handle;
+//TaskHandle_t task2_handle;
+TaskHandle_t ledg_handle;
+TaskHandle_t ledr_handle;
+TaskHandle_t ledy_handle;
+TaskHandle_t btn_handle;
 
 void setup() {
 
-  //TaskHandle_t task1_handle;
-  //TaskHandle_t task2_handle;
-  TaskHandle_t ledg_handle;
-  TaskHandle_t ledr_handle;
-  TaskHandle_t ledy_handle;
-  TaskHandle_t btn_handle;
-  TaskHandle_t volatile next_task_handle = NULL;
   BaseType_t status;
 
   pinMode(2, OUTPUT);
@@ -77,8 +77,10 @@ static void led_green_handler(void* parameters){
     digitalWrite(2, LOW);
     vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(1000));
     status=xTaskNotifyWait(0, 0, NULL, pdMS_TO_TICKS(1000));
-    if(status=pdTRUE){
+    if(status==pdTRUE){
+      vTaskSuspendAll();
       next_task_handle = ledy_handle;
+      xTaskResumeAll();
       digitalWrite(2, HIGH);
       vTaskDelete(NULL);
     }
@@ -98,11 +100,13 @@ static void led_red_handler(void* parameters){
     digitalWrite(4, LOW);
     vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(800));
     status=xTaskNotifyWait(0, 0, NULL, pdMS_TO_TICKS(800));
-    if(status=pdTRUE){
+    if(status==pdTRUE){
+      vTaskSuspendAll();
       next_task_handle = NULL;
+      xTaskResumeAll();
       digitalWrite(4, HIGH);
-      vTaskDelete(NULL);
       vTaskDelete(btn_handle);
+      vTaskDelete(NULL);
     }
   } 
 }
@@ -119,8 +123,10 @@ static void led_yellow_handler(void* parameters){
     digitalWrite(7, LOW);
     vTaskDelayUntil(&last_wakeup_time, pdMS_TO_TICKS(400));
     status=xTaskNotifyWait(0, 0, NULL, pdMS_TO_TICKS(400));
-    if(status=pdTRUE){
+    if(status==pdTRUE){
+      vTaskSuspendAll();
       next_task_handle = ledr_handle;
+      xTaskResumeAll();
       digitalWrite(7, HIGH);
       vTaskDelete(NULL);
     }
